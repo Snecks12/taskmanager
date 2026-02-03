@@ -1,0 +1,66 @@
+.online-emp-container{
+    grid-column: 1/4;
+    grid-row: 3/10;
+    border-radius: 8px;
+    display: flex;
+    padding: 8px;
+    background: linear-gradient(45deg, #1288e8ff 0%, #cfcfd0ff 100%);
+    background-size: 200% 200%;
+    animation: backgrounds 6s ease infinite;
+    height: 100%;
+    justify-content: space-between;
+}
+@keyframes backgrounds {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.emp-online{
+  display: flex;
+  width: 100px;
+  flex-direction: column;
+  background-color: aqua;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+}
+.total-online{
+  display: block;
+  font-size: 80px;
+  margin-top: -100px;
+}
+.view-online-emp-btn{
+  display: block; 
+  margin-bottom: -100px;
+  margin-left: 20px; 
+}
+.emp-offline{
+  display: flex;
+  width: 100px;
+  flex-direction: column;
+  background-color: rgba(3, 76, 76, 1);
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+}
+.total-offline{
+  display: block;
+  font-size: 80px;
+  margin-top: -100px;
+}
+.view-offline-emp{
+  display: block; 
+  margin-bottom: -100px;
+  margin-left: 1px; 
+}
+

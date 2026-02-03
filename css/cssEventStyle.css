@@ -1,0 +1,22 @@
+.calendar-date {
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.calendar-date.selected-date {
+    background-color: #4f46e5; /* blue */
+    color: white;
+    border-radius: 8px;
+}
+
+.calendar-date.has-event {
+    background-color: #22c55e; /* green */
+    color: white;
+    border-radius: 8px;
+}
+.calendar-date.today {
+    background-color: #f59e0b; /* orange */
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+}

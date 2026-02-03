@@ -1,0 +1,226 @@
+/* ===============================
+   GLOBAL CONTAINER
+================================ */
+.my-task-container-table {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: 12px;
+  color: #1e293b;
+}
+
+/* ===============================
+   SECTION HEADERS
+================================ */
+.my-task-container-table h2 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 12px 0 6px;
+  color: #0f172a;
+}
+
+/* ===============================
+   Delete Btn
+================================ */
+.delete-table{
+  color: red;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: relative;
+  left: 22px;
+}
+
+/* ===============================
+   TABLE CONTAINERS (ALL)
+================================ */
+.my-tasks-table-container,
+.my-tasks-table-container-tomorrow,
+.my-tasks-table-container-this-week,
+.my-tasks-table-container-next-week {
+  width: 100%;
+  max-height: 60vh;
+  overflow: auto;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* ===============================
+   TABLE BASE (ALL)
+================================ */
+.my-tasks-table,
+.my-tasks-table-tomorrow,
+.my-tasks-table-this-week,
+.my-tasks-table-next-week {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 12px;
+}
+
+/* ===============================
+   TABLE HEADERS
+================================ */
+thead th {
+  position: sticky;
+  top: 0;
+  background: #f1f5f9;
+  padding: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #475569;
+  border-bottom: 2px solid #e6eef6;
+}
+
+/* ===============================
+   TABLE CELLS
+================================ */
+tbody td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #e6eef6;
+  color: #334155;
+  word-break: break-word;
+}
+
+/* Column separators */
+th:not(:last-child),
+td:not(:last-child) {
+  border-right: 1px solid #e6eef6;
+}
+
+/* Checkbox column */
+td:first-child {
+  width: 40px;
+  text-align: center;
+}
+
+/* Task column */
+th:nth-child(2),
+td:nth-child(2) {
+  width: 35%;
+  min-width: 220px;
+}
+
+/* Zebra rows */
+tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+/* Hover effect */
+tbody tr:hover {
+  background-color: #e2e8f0;
+  transition: background 0.2s ease;
+}
+
+/* ===============================
+   PRIORITY / STATUS BADGE
+================================ */
+.status,
+.priority {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+  display: inline-block;
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+/* ===============================
+   COMMENT POPUP
+================================ */
+.comment-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+
+.comment-popup-content {
+  background: #fff;
+  padding: 16px;
+  width: 320px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.comment-popup-content input {
+  padding: 6px;
+}
+
+.popup-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* ===============================
+   RESPONSIVE — TABLET
+================================ */
+@media (max-width: 768px) {
+
+  .my-tasks-table-container,
+  .my-tasks-table-container-tomorrow,
+  .my-tasks-table-container-this-week,
+  .my-tasks-table-container-next-week {
+    max-height: 70vh;
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+
+  thead th,
+  tbody td {
+    padding: 6px;
+    font-size: 11px;
+  }
+
+  .my-task-container-table h2 {
+    font-size: 13px;
+  }
+}
+
+/* ===============================
+   RESPONSIVE — MOBILE
+================================ */
+@media (max-width: 480px) {
+
+  /* Hide less important columns */
+  th:nth-child(4),
+  td:nth-child(4),
+  th:nth-child(5),
+  td:nth-child(5) {
+    display: none;
+  }
+
+  /* Fix delete button offset */
+  .delete-table {
+    left: 0;
+    font-size: 14px;
+  }
+
+  td:first-child {
+    width: 32px;
+  }
+
+  /* Popup improvements */
+  .comment-popup-content {
+    width: 90%;
+    max-width: 320px;
+    padding: 14px;
+  }
+
+  .popup-actions {
+    flex-direction: column;
+  }
+}

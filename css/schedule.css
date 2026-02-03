@@ -1,0 +1,128 @@
+.schedule-page {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(250px, 1fr));
+  grid-column: 1/5;
+  grid-row:auto;
+  grid-auto-flow:row;
+  width: 100%; 
+  max-width: 100%;
+  height: auto;
+  min-height: 100%; 
+  grid-gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.card {
+  height: 200px;
+  width: 100%; /* Ensure card fills the grid column */
+  box-shadow: 1px 2px 12px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  padding:10px;
+  border-radius: 8px;
+}
+
+/* DATE */
+.date {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+/* TIME */
+.time {
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 25px;
+    white-space: nowrap;
+}
+
+/* LINE */
+.card hr {
+    border: none;
+    border-top: 2px solid #000;
+    margin-bottom: 20px;
+}
+
+/* DETAILS */
+.details {
+    font-size: 14px;
+}
+
+.label {
+    margin-bottom: 8px;
+}
+
+.desc {
+    max-width: 220px;
+}
+.schedule-menu{
+    border: none;
+    background: none;
+    outline:none;
+}
+.open-div{
+    position: fixed;
+    top: 50%;              /* push down halfway */
+    left: 50%;             /* push right halfway */
+    transform: translate(-50%, -50%); /* pull back by half its own size */
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    max-height: 450px;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    max-height: 520px;
+      -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+          animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.open-div-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    max-width: 400px;
+    justify-content: center;
+    gap: 10px;
+}
+.open-div-container label{
+    text-align: left;
+}
+.open-div-container input{
+    padding: 5px;
+    border: none;
+    outline: none;
+}
+.open-div-container input:focus{
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.35);
+    border-radius: 8px;
+}
+.open-div-container .schedule-desc{
+    height: 150px;
+    padding: 5px;
+}
+.save-schedule{
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: green;
+    cursor: pointer;
+    color: white;
+}
+.delete-schedule{
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: red;
+    cursor: pointer;
+    color: white;
+
+}

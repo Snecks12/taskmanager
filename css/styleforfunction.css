@@ -1,0 +1,233 @@
+.mytasks {
+  height: 320px;
+  overflow: auto;
+  grid-column: 2/4;
+}
+/* ===============================
+   ADD TASK FORM (MODAL)
+================================ */
+.addTaskForm {
+  width: 100%;
+  max-width: 420px;
+  background-color: #ffffffff;
+  padding: 16px;
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: 12px;
+  color: #1e293b;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  height:auto;
+  max-height: 85vh;
+  overflow-y: auto;
+  transform: translate(-50%, -50%) scale(0);
+  transform-origin: center;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+          animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.add-task-from::-webkit-scrollbar{
+  display: none;
+}
+.addTaskForm{
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style:none;
+}
+
+/* ===============================
+   HEADER
+================================ */
+.add-task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  width: 100%;
+}
+
+.add-task-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.modal-close {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.modal-close:hover {
+  opacity: 1;
+}
+
+/* ===============================
+   LABELS
+================================ */
+.addTaskForm label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #475569;
+  text-align: left;
+  width: 100%;
+}
+
+/* ===============================
+   INPUTS & SELECTS
+================================ */
+.addTaskForm input,
+.addTaskForm select {
+  width: 100%;
+  padding: 7px 9px;
+  font-size: 12px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.addTaskForm input:focus,
+.addTaskForm select:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 2px rgba(56,189,248,0.25);
+  background: #ffffff;
+}
+
+/* ===============================
+   TIME INPUT
+================================ */
+.addTaskForm input[type="time"] {
+  padding: 6px 8px;
+}
+
+/* ===============================
+   SUBMIT BUTTON
+================================ */
+.addTaskForm button[type="submit"] {
+  margin-top: 10px;
+  padding: 9px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.addTaskForm button[type="submit"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(14,165,233,0.35);
+}
+
+/* ===============================
+   OPTIONAL: PRIORITY COLORS
+================================ */
+.task-priority option[value="Low"] {
+  color: #16a34a;
+}
+
+.task-priority option[value="Medium"] {
+  color: #ca8a04;
+}
+
+.task-priority option[value="High"] {
+  color: #dc2626;
+}
+
+#toast {
+      visibility: hidden;
+      min-width: 250px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 8px;
+      padding: 16px;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      font-size: 16px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.4s, transform 0.4s;
+      z-index: 1000;
+    }
+#toast.show {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+@-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(0);
+            transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+@media (max-width: 480px) {
+  .mytasks {
+    grid-column: 1/-1;
+    width: 100%;
+  }
+  .addTaskForm {
+    width: 98%;
+    max-width: none;
+    height: 100%;
+    max-height: 90vh;
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .add-task-header h3 {
+    font-size: 16px;
+  }
+
+  .addTaskForm input,
+  .addTaskForm select {
+    font-size: 13px;
+  }
+
+  .addTaskForm button[type="submit"] {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  #toast {
+    right: 10px;
+    bottom: 15px;
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .mytasks {
+    grid-column: 1 / -1;
+    height: 300px;
+  }
+
+  .addTaskForm {
+    width: 90%;
+    max-width: 480px;
+  }
+}
+@media (min-width: 1200px) {
+  .addTaskForm {
+    max-width: 460px;
+  }
+}

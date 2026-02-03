@@ -1,0 +1,443 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+  z-index: 9998;
+}
+/* =========================
+   CATEGORIES CONTAINER
+========================= */
+.categories-container {
+  background-color: white;
+  height: 320px;
+  overflow-y: auto;
+  grid-column: 1 / 2;
+  border-radius: 10px;
+}
+.popDiv{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+}
+.new-div-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.new-div-header button{
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+.form-div{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+/* =========================
+   HEADER
+========================= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.header .add {
+  height: 35px;
+  font-size: 17px;
+  padding: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.header .add:hover {
+  background-color: #e5e7eb;
+}
+
+/* =========================
+   CATEGORIES LIST
+========================= */
+.categories-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+}
+
+.categories,
+.new-group-inside {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background-color: #1e1e1e3f;
+  width: 100%;
+}
+
+.newGroup {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+}
+
+/* =========================
+   OVERLAY (POPUPS)
+========================= */
+.overlay,
+.popup,
+.members-div {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* =========================
+   POPUP CARD (SHARED)
+========================= */
+.form-div,
+.new-div-container,
+.popup-content,
+.add-member-popup-content {
+  width: 100%;
+  max-width: 620px;
+  background: #ffffff;
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* =========================
+   FORM CONTENT
+========================= */
+.form-div h2,
+.popup-content h3,
+.add-member-popup-content h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.form-div label {
+  font-size: 14px;
+  color: #374151;
+}
+
+.form-div input,
+.form-div select,
+.popup-content textarea,
+.add-member-popup-content input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-div input:focus,
+.form-div select:focus,
+.popup-content textarea:focus,
+.add-member-popup-content input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.25);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+button {
+  cursor: pointer;
+}
+
+#saveBtn,
+.save-group,
+.employee-header .add-employee,
+#addMemberConfirm {
+  background: #22c55e;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 10px;
+}
+
+#saveBtn:hover,
+.save-group:hover,
+.employee-header .add-employee:hover,
+#addMemberConfirm:hover {
+  background: #16a34a;
+}
+
+.closeAddEmp,
+#closePopup,
+#closeMsgPopup {
+  background: #e5e7eb;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.closeAddEmp:hover,
+#closePopup:hover,
+#closeMsgPopup:hover {
+  background: #d1d5db;
+}
+
+/* =========================
+   POPUP BUTTON ROW
+========================= */
+.popup-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* =========================
+   VIEW MENU
+========================= */
+.viewBtnDiv {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  right: 50px;
+  background-color:whitesmoke;
+  padding:10px;
+  gap: 8px;
+  z-index: 9999;
+}
+
+/* =========================
+   MEMBERS CONTENT CARD
+========================= */
+.members-div > div {
+  max-width: 520px;
+  width: 100%;
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+/* =========================
+   EMPLOYEE TABLE
+========================= */
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+
+/* =========================
+   📱 MOBILE
+========================= */
+@media (max-width: 480px) {
+
+  .employee-table thead {
+    display: none;
+  }
+
+  .employee-table {
+    width: 100%;
+    table-layout: auto;
+  }
+
+  .employee-table tr {
+    width: 100%;
+  }
+
+  .employee-table td {
+    display: grid;
+    grid-template-columns: 120px auto;
+    gap: 8px;
+    padding: 6px 0;
+    align-items: flex-start;
+  }
+
+  .employee-table td::before {
+    font-weight: 600;
+    color: #475569;
+    white-space: nowrap;
+    line-height: 1.4;
+  }
+
+  .employee-table .cell-value {
+    display: inline-block;
+    max-width: 100%;
+    word-break: normal !important;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+
+  .employee-table .email {
+    overflow-wrap: anywhere;
+  }
+
+  .employee-table td:nth-child(1)::before { content: "Name"; }
+  .employee-table td:nth-child(2)::before { content: "Department"; }
+  .employee-table td:nth-child(3)::before { content: "Position"; }
+  .employee-table td:nth-child(4)::before { content: "Email"; }
+  .employee-table td:nth-child(5)::before { content: "Select"; }
+  .employee-table td:nth-child(6)::before { content: "Delete"; }
+}
+.new-div-container{
+  scrollbar-width: none;
+  -ms-overflow-style:none;
+}
+.new-div-container::-webkit-scrollbar{
+  display:none;
+}
+.new-div-group-input{
+  padding: 10px;
+  margin: 0;
+}
+.new-div-group-input input{
+  padding: 8px;
+  border: 1px solid lightgrey;
+  width: 100%;
+}
+.new-div-group-input input:focus{
+  outline: none;
+  border-color:#3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.35);
+  border-radius: 6px;
+}
+
+
+/* =========================
+   📱 TABLET
+========================= */
+@media (max-width: 768px) {
+
+  .categories-container {
+    grid-column: 1 / -1;
+    height: 300px;
+  }
+
+  .form-div,
+  .new-div-container {
+    max-width: 85%;
+  }
+}
+
+/* =========================
+   💻 LARGE DESKTOP
+========================= */
+@media (min-width: 1200px) {
+  .form-div,
+  .new-div-container {
+    max-width: 620px;
+  }
+}
+
+/* for member div */
+.members-div{
+  width: 100%;
+  max-width: 420px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  position: fixed;
+  left:50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    border-radius: 8px;
+    overflow-y: auto;
+}
+.employee-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px 14px;
+  margin: 0;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  font-family: system-ui, -apple-system, sans-serif;
+  border-bottom: 1px solid lightgray;
+}
+
+/* Employee text */
+.employee-items span {
+  flex: 1;
+  font-size: 14px;
+  color: #111827;
+  font-weight: 500;
+}
+
+/* Buttons */
+.employee-items button {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+/* Message button */
+.employee-items .message {
+  background: #3b82f6;
+  color: #fff;
+}
+
+.employee-items .message:hover {
+  background-color: #2563eb;
+}
+
+/* Kick button */
+.employee-items .kick {
+  background: #ef4444;
+  color: #fff;
+}
+
+.employee-items .kick:hover {
+  background: #dc2626;
+}
+
+/* Hover effect */
+.employee-items:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .employee-items {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .employee-items button {
+    width: 100%;
+  }
+}

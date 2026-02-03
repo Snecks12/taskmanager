@@ -1,0 +1,48 @@
+.hamburger {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+#overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  z-index: 999;
+}
+
+#overlay.show {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .hamburger {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 240px;
+    height: 100vh;
+    background: white;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  /* Overlay */
+  #overlay {
+    display: none;
+  }
+
+  #overlay.show {
+    display: block;
+  }
+}

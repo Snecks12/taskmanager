@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager - Productivity Dashboard</title>
+    <meta name="description" content="Manage your tasks efficiently with our productivity dashboard">
+    <meta name="keywords" content="task manager, productivity, dashboard, tasks, schedule">
+    <meta name="author" content="Your Name">
+    <title>TASKMANAGER</title>
+    <link rel="stylesheet" href="css/chatDetailGroupBtn.css">
+    <link rel="stylesheet" href="css/forPopupCommentDetails.css">
+    <link rel="stylesheet" href="css/cssEventStyle.css">
+    <link rel="stylesheet" href="css/hamburger.css">
+    <link rel="stylesheet" href="css/toastStatus.css">
+    <link rel="stylesheet" href="css/chart.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/clockstyle.css"/>
+    <link rel="stylesheet" href="css/styleforfunction.css"/>
+    <link rel="stylesheet" href="css/newTaskStyle.css"/>
+    <link rel="stylesheet" href="css/categorieStyle.css"/>
+    <link rel="stylesheet" href="css/tracking.css"/>
+    <link rel="stylesheet" href="css/commentStyle.css"/>
+    <link rel="stylesheet" href="css/MyTaskLink.css"/>
+    <link rel="stylesheet" href="css/mailStyle.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD&icon_names=dashboard,add_task" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href ="css/onlineEmp.css"/>
+    <link rel="stylesheet" href="css/profle.css"/>
+    <link rel="stylesheet" href="css/notification.css"/>
+    <link rel="stylesheet" href="css/schedule.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amethysta&family=Anton&family=Bebas+Neue&family=Bytesized&family=DM+Serif+Text:ital@0;1&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Intel+One+Mono:wght@300..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend:wght@100..900&family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&family=Oswald:wght@200..700&family=Protest+Strike&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="overlay"></div>
+
+    <div id="toast">This is a toast message!</div>
+    <div id="toastStatus"></div>
+    <div class="container">
+                <div class="search">
+                    <div class = "search-container">
+                        <button id="menuToggle" class="hamburger">☰</button>
+                        <input id = "searchInput" class = "search-input" type="search" placeholder="Search...">
+                        <div class = "search-buttons">
+                              <div class="clock">
+                            <span id="day"></span>
+                            <span id="date"></span>
+                            <span id="time"></span>
+                        </div>
+                        <button id = "taskButton" class = "task-button" title="Click to add a task."><span class="material-symbols-outlined">add_task</span></button>
+                        <button id = "mailBtn"class = "mail-button" title="Click to open message"><span class="material-symbols-outlined">chat</span></button>
+                        <button id="profile_button" class = "profile-button" title="Click to open profile"><span class="material-symbols-outlined">account_circle</span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar">
+                                <!-- links-container -->
+                                <div class = "links-container">
+                                <div class = "sidebar-links"><a href = "#" onclick= "handleSidebarClick(event, 'dashboard')">
+                                    <span class="material-symbols-outlined">dashboard</span>Dashboard</a>
+                                </div>
+                                
+                                <div class = "sidebar-links"><a href = "#" onclick="handleSidebarClick(event, 'my_tasks')">
+                                    <span class="material-symbols-outlined">task</span>My tasks</a>
+                                </div>  
+                                
+                                <div class = "sidebar-links"><a href = "#" onclick="handleSidebarClick(event, 'notifications')">
+                                    <span class="material-symbols-outlined">notifications</span>Notifications</a>
+                                </div>
+
+                                <div class = "sidebar-links"><a href = "#" onclick="handleSidebarClick(event, 'schedule')">
+                                    <span class="material-symbols-outlined">schedule</span>Schedule & Event</a>
+                                </div>
+                </div>
+                    <!-- setting and logout -->
+                    <div class = "settings-container">
+                        <button id = "settings-btn" onclick="openSettings()" class = "settings-btn">
+                            <span class="material-symbols-outlined">settings
+                            </span>Settings
+                        </button>
+                        
+                        <button class = "logout">
+                        <span class="material-symbols-outlined">logout
+                        </span>Log out
+                        </button>
+                    </div>
+        </div>
+        
+                    <!-- CONTENT -->
+        <div class="content" id = "mainContent"></div>
+   </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/source.js"></script>
+<script src="js/clock.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/hamburgerTuggle.js"></script>
+<script src="js/profile.js"></script>
+</body>
+</html>

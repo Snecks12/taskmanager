@@ -1,0 +1,151 @@
+/* Popup overlay */
+.comment-detail-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.2s ease;
+}
+
+/* Popup card */
+.comment-detail-content {
+  width: 100%;
+  max-width: 520px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  animation: scaleIn 0.25s ease;
+  max-height: 550px;
+  overflow-y: auto;
+}
+
+/* Title */
+.comment-detail-content h3 {
+  margin: 0 0 14px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Meta info */
+.task-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 12px;
+  margin-top: 20px;
+
+}
+
+.task-meta p {
+  font-size: 13px;
+  margin: 0;
+  color: black;
+}
+
+.task-meta strong {
+  font-weight: 600;
+}
+.task-meta,label,input{
+  margin-top: 15px;
+}
+/* Reply input */
+.comment-detail-content label {
+  font-size: 13px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+#replyInput {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 13px;
+  outline: none;
+}
+
+#replyInput:focus {
+  border-color: #4f46e5;
+}
+
+/* Action buttons */
+.popup-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.popup-actions button {
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+}
+.comment-header-detail{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap:8px;
+    position:relative;
+    overflow-y: scroll;
+}
+.comment-header-detail *{
+  font-size: 13px;
+  color:#444;
+}
+.comment-header-detail strong{
+  font-weight: 600;
+  color: black;
+}
+.comment-header-detail button{
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.comment-header
+.comment-header-detail,
+.comment-message,
+.comment-from
+{
+    width: 100%;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+}
+.comment-task-notif{
+  line-height: 20px;
+}
+/* Primary */
+#sendReply {
+  background: #4f46e5;
+  color: #fff;
+}
+
+/* Secondary */
+#closePopup {
+  background: #f3f3f3;
+  color: #333;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
