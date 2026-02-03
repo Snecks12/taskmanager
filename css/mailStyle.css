@@ -490,15 +490,15 @@
     opacity: 1;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .aside-bar{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: 97%;
   }
   .chat-area{
     width: 100%;
-    max-width:375px;
   }
   .aside-search{
     width: 100%;
@@ -510,19 +510,6 @@
   }
 }
 
-@media (max-width:600px) {
-  .wrap {
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: none;
-    width: 100vw;
-    height: 100vh;
-    max-width: none;
-    border-radius: 0;
-    padding: 0;
-  }
-}
 @media (max-width: 600px) {
   .aside-bar {
     height: 64px;
@@ -547,8 +534,8 @@
   }
 
   .contact {
-    min-width: 120px;
     padding: 6px;
+    width: 100%;
   }
 
   .contact-name {
@@ -592,14 +579,28 @@
     position: fixed;
     top: env(safe-area-inset-top);
     left: 0;
-    width: 100%;
+    width: 50%;
     height: calc(
       100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom)
     );
-    max-height: 94vh;
+    max-height: 50vh;
     border-radius: 14px;
     margin: 8px;
     transform: none;
+  }
+}
+@media (max-width:600px) {
+  .wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    border-radius: 0;
+    padding: 0;
+    background: none;
   }
 }
 
@@ -640,6 +641,8 @@
     overflow-y: auto;
     background: transparent;
     padding-top: 8px;
+    width: 100%;
+    max-width: 380px;
   }
 
   /* Hide chat by default on mobile */
