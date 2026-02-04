@@ -126,3 +126,10 @@
     color: white;
 
 }
+@media (max-width: 480px) {
+    .open-div{
+        width: 340px;
+        padding: 20px;
+        border-radius: 10px;
+    }
+}
