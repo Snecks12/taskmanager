@@ -2355,6 +2355,9 @@ function openCategoryModal() {
     function updateEmployeeList() {
         addEmployeeHere.innerHTML = "";
 
+        const employeeTableContainer = document.createElement('div');
+        employeeTableContainer.classList.add("employeeTableContainer");
+
         const table = document.createElement('table');
         table.classList.add('employee-table');
 
@@ -2369,8 +2372,8 @@ function openCategoryModal() {
                                         <th>Delete</th>
                                     </tr>
                                     `;
+        employeeTableContainer.appendChild(table)
         table.appendChild(thead);
-
         const tbody = document.createElement('tbody');
 
         theEmployee.forEach((emp, index) => {
@@ -2380,11 +2383,11 @@ function openCategoryModal() {
             const row = document.createElement('tr');
             row.classList.add('employee-row');
             row.innerHTML = `
+    <td><input type="checkbox" class="checkbox"/></td>
     <td><span class="cell-value">${emp.name}</span></td>
     <td><span class="cell-value">${emp.department}</span></td>
     <td><span class="cell-value">${emp.position}</span></td>
     <td><span class="cell-value email">${emp.email}</span></td>
-    <td><input type="checkbox" class="checkbox"/></td>
     <td>
       <button class="deleteEmpBtn"  style="background: none; border: none; outline: none; cursor: pointer; color: red;">
         <span class="material-symbols-outlined">delete</span>
@@ -2399,7 +2402,7 @@ function openCategoryModal() {
         });
 
         table.appendChild(tbody);
-        addEmployeeHere.appendChild(table);
+        addEmployeeHere.appendChild(employeeTableContainer);
     }
     updateEmployeeList();
 

@@ -1,10 +1,4 @@
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(2px);
-  z-index: 9998;
-}
+
 /* =========================
    CATEGORIES CONTAINER
 ========================= */
@@ -197,7 +191,8 @@ button {
 
 .closeAddEmp,
 #closePopup,
-#closeMsgPopup {
+#closeMsgPopup,
+#sendMsg {
   background: #e5e7eb;
   border: none;
   padding: 10px;
@@ -207,7 +202,7 @@ button {
 .closeAddEmp:hover,
 #closePopup:hover,
 #closeMsgPopup:hover {
-  background: #d1d5db;
+  background: #4e4e4e;
 }
 
 /* =========================
@@ -255,80 +250,6 @@ button {
 }
 
 
-/* =========================
-   📱 MOBILE
-========================= */
-@media (max-width: 480px) {
-
-  .employee-table thead {
-    display: none;
-  }
-
-  .employee-table {
-    width: 100%;
-    table-layout: auto;
-  }
-
-  .employee-table tr {
-    width: 100%;
-  }
-
-  .employee-table td {
-    display: grid;
-    grid-template-columns: 120px auto;
-    gap: 8px;
-    padding: 6px 0;
-    align-items: flex-start;
-  }
-
-  .employee-table td::before {
-    font-weight: 600;
-    color: #475569;
-    white-space: nowrap;
-    line-height: 1.4;
-  }
-
-  .employee-table .cell-value {
-    display: inline-block;
-    max-width: 100%;
-    word-break: normal !important;
-    overflow-wrap: break-word;
-    white-space: normal;
-  }
-
-  .employee-table .email {
-    overflow-wrap: anywhere;
-  }
-
-  .employee-table td:nth-child(1)::before { content: "Name"; }
-  .employee-table td:nth-child(2)::before { content: "Department"; }
-  .employee-table td:nth-child(3)::before { content: "Position"; }
-  .employee-table td:nth-child(4)::before { content: "Email"; }
-  .employee-table td:nth-child(5)::before { content: "Select"; }
-  .employee-table td:nth-child(6)::before { content: "Delete"; }
-}
-.new-div-container{
-  scrollbar-width: none;
-  -ms-overflow-style:none;
-}
-.new-div-container::-webkit-scrollbar{
-  display:none;
-}
-.new-div-group-input{
-  padding: 10px;
-  margin: 0;
-}
-.new-div-group-input input{
-  padding: 8px;
-  border: 1px solid lightgrey;
-  width: 100%;
-}
-.new-div-group-input input:focus{
-  outline: none;
-  border-color:#3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.35);
-  border-radius: 6px;
-}
 
 
 /* =========================
@@ -361,7 +282,8 @@ button {
 .members-div{
   width: 100%;
   max-width: 420px;
-  height: 300px;
+  height: 100%;
+  max-height: 480px;
   display: flex;
   flex-direction: column;
   background: white;
