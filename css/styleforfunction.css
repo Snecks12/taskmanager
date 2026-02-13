@@ -26,18 +26,20 @@
   height:auto;
   max-height: 85vh;
   overflow-y: auto;
-  transform: translate(-50%, -50%) scale(0);
+  transform: translate(-50%, -50%) translateY(10px);
+  opacity: 1;
   transform-origin: center;
-  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-          animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 .add-task-from::-webkit-scrollbar{
   display: none;
 }
-.addTaskForm{
-  overflow: auto;
+.addTaskForm {
+  overflow-y: auto;
   scrollbar-width: none;
-  -ms-overflow-style:none;
+}
+
+.addTaskForm::-webkit-scrollbar {
+  display: none;
 }
 
 /* ===============================
