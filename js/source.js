@@ -1267,7 +1267,7 @@ mailBtn.addEventListener('click', function (e) {
                                         <div class = "icons">
                                             <div class = "dot" id = "statusDot" style = "display:none"></div>
                                             <button class = "arrow-back" title="Close chat"><span class="material-symbols-outlined">arrow_back_ios</span></button>
-                                            <button class = "icon-btn" title = "Call"><span class="material-symbols-outlined">call</span></button>
+                                            <button class = "icon-btn-call" title = "Call"><span class="material-symbols-outlined">call</span></button>
                                             <button class = "icon-btn-details" title = "More">⋮</button>
                                             <button class = "delete-chat" title= "Delete chat"><span class="material-symbols-outlined">delete</span></button>
                                         </div>

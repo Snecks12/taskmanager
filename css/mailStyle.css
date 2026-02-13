@@ -305,7 +305,13 @@
   border: 0;
   cursor: pointer;
   font-size: 16px;
+  color: black;
+}
+.icon-btn-call{
   color: white;
+  border: none;
+  outline:none;
+  background: none;
 }
 .send {
   background: var(--accent);
